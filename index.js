@@ -4,6 +4,8 @@ const database = require('./database');
 
 const app = express();
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
     res.send('Welcome to Book API');
 })
@@ -143,7 +145,34 @@ app.get("/publication/b/:bookID", (req, res) => {
 // Body             - none
 app.post("/book/new", (req, res) => {
   console.log(req.body);
-})
+  res.json({ message: "New Book added successfully!" });
+});
+
+
+// Route            - /author/new
+// Description      - To add a new author
+// Access           - Public
+// Method           - POST
+// Params           - none
+// Body             - none
+app.post("/author/new", (req, res) => {
+  const {newAuthor} = req.body;
+  console.log(newAuthor);
+  res.json({ message: "New Author added successfully!" });
+});
+
+
+// Route            - /author/new
+// Description      - To add a new author
+// Access           - Public
+// Method           - POST
+// Params           - none
+// Body             - none
+app.post("/publication/new", (req, res) => {
+  const publication = req.body;
+  console.log(publication);
+  res.json({ message: "New Publication added successfully!" });
+});
 
 app.listen(4000,() => {
     console.log('Server Running!!!🔥 Listening on http://localhost:4000');
