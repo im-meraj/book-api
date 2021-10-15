@@ -28,7 +28,7 @@
     - GET
       - To get all books✅
       - To get a specific book✅
-      - To get a list of books based on category
+      - To get a list of books based on category✅
       - To get a list of books based on authors
 
     - POST
