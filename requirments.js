@@ -29,7 +29,7 @@
       - To get all books✅
       - To get a specific book✅
       - To get a list of books based on category✅
-      - To get a list of books based on authors
+      - To get a list of books based on authors✅
 
     - POST
       - To add a new book
@@ -46,9 +46,9 @@
     Author
 
     - GET
-      - To get all authors
-      - To get a specific author
-      - To get a list of author based on book
+      - To get all authors✅
+      - To get a specific author✅
+      - To get a list of author based on book✅
 
     - POST
       - To add new author
@@ -64,9 +64,9 @@
     Publications
 
     - GET
-      - To get all publication
-      - To get a specific publication
-      - To get a list of publication based on book
+      - To get all publication✅
+      - To get a specific publication✅
+      - To get a list of publication based on book✅
 
     - POST
       - To add new publication

@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 })
 
 
+// GET ROUTES
 
 // Route            - /book
 // Description      - To get all the books
@@ -46,6 +47,104 @@ app.get("/book/c/:category", (req, res) => {
   return res.json({ book: getBook });
 });
 
-app.listen(4000,()=> {
-    console.log('listening on http://localhost:4000');
+// Route            - /book/a/:authorID
+// Description      - To get a list of books based on author
+// Access           - Public
+// Method           - GET
+// Params           - authorID
+// Body             - none
+app.get("/book/a/:authorID", (req, res) => {
+  const getBook = database.Books.filter(
+    (book) => book.authors.includes(parseInt(req.params.authorID))
+  );
+  return res.json({ book: getBook });
+});
+
+
+// Route            - /author
+// Description      - To get all authors
+// Access           - Public
+// Method           - GET
+// Params           - none
+// Body             - none
+app.get("/author", (req, res) => {
+  res.json({ authors: database.Authors });
+});
+
+// Route            - /author/:authorID
+// Description      - To get a specific author
+// Access           - Public
+// Method           - GET
+// Params           - authorID
+// Body             - none
+app.get("/author/:authorID", (req, res) => {
+  const getAuthor = database.Authors.filter((author) => author.id === parseInt(req.params.authorID))
+  return res.json({ author: getAuthor });
+});
+
+// Route            - /author/b/:bookID
+// Description      - To get a list of authors based on books
+// Access           - Public
+// Method           - GET
+// Params           - bookID
+// Body             - none
+app.get("/author/b/:bookID", (req, res) => {
+  const getAuthor = database.Authors.filter(
+    (author) => author.books.includes(req.params.bookID)
+  );
+  return res.json({ author: getAuthor });
+});
+
+
+// Route            - /publication
+// Description      - To get all publications
+// Access           - Public
+// Method           - GET
+// Params           - none
+// Body             - none
+app.get("/publication", (req, res) => {
+  res.json({ publication: database.Publications });
+});
+
+
+// Route            - /publication/:publicationID
+// Description      - To get a specific publication
+// Access           - Public
+// Method           - GET
+// Params           - publicationID
+// Body             - none
+app.get("/publication/:publicationID", (req, res) => {
+  const getPublication = database.Publications.filter((publication) => publication.id === parseInt(req.params.publicationID));
+  console.log(getPublication);
+  return res.json({ publication: getPublication });
+});
+
+
+// Route            - /publication/b/:bookID
+// Description      - To get a list of publications based on books
+// Access           - Public
+// Method           - GET
+// Params           - bookID
+// Body             - none
+app.get("/publication/b/:bookID", (req, res) => {
+  const bookID = req.params.bookID;
+  const getPublication = database.Publications.filter((publication) => publication.books.includes(bookID));
+  return res.json({ publication: getPublication });
+});
+
+
+// POST ROUTES
+
+// Route            - /book/new
+// Description      - To add a new book
+// Access           - Public
+// Method           - POST
+// Params           - none
+// Body             - none
+app.post("/book/new", (req, res) => {
+  
+})
+
+app.listen(4000,() => {
+    console.log('Server Running!!!🔥 Listening on http://localhost:4000');
 })
