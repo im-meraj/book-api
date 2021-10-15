@@ -142,7 +142,7 @@ app.get("/publication/b/:bookID", (req, res) => {
 // Params           - none
 // Body             - none
 app.post("/book/new", (req, res) => {
-  
+  console.log(req.body);
 })
 
 app.listen(4000,() => {
