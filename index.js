@@ -144,8 +144,9 @@ app.get("/publication/b/:bookID", (req, res) => {
 // Params           - none
 // Body             - none
 app.post("/book/new", (req, res) => {
-  console.log(req.body);
-  res.json({ message: "New Book added successfully!" });
+  const { newBook } = req.body;
+  database.Books.push(newBook);
+  return res.json(database.Books);
 });
 
 
@@ -157,8 +158,8 @@ app.post("/book/new", (req, res) => {
 // Body             - none
 app.post("/author/new", (req, res) => {
   const {newAuthor} = req.body;
-  console.log(newAuthor);
-  res.json({ message: "New Author added successfully!" });
+  database.Authors.push(newAuthor);
+  return res.json(database.Authors);
 });
 
 
@@ -169,9 +170,33 @@ app.post("/author/new", (req, res) => {
 // Params           - none
 // Body             - none
 app.post("/publication/new", (req, res) => {
-  const publication = req.body;
-  console.log(publication);
-  res.json({ message: "New Publication added successfully!" });
+  const newPublication = req.body;
+  database.Publications.push(newPublication);
+  return res.json(database.Publications);
+});
+
+
+// PUT ROUTES
+
+
+// Route            - /book/update
+// Description      - To update an existing book
+// Access           - Public
+// Method           - PUT
+// Params           - isbn
+// Body             - none
+
+app.put("/book/update/:isbn", (req, res) => {
+  const {updatedBook} = req.body;
+  const {isbn} = req.params;
+
+  const book = database.Books.map((book) => {
+    if (book.ISBN === isbn) {
+      return {...book, ...updatedBook};
+    }
+    return book;
+  });
+  return res.json(book);
 });
 
 app.listen(4000,() => {

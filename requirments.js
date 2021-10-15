@@ -32,10 +32,10 @@
       - To get a list of books based on authors✅
 
     - POST
-      - To add a new book
+      - To add a new book✅
 
     - PUT
-      - To update book details
+      - To update book details✅
       - To update/add new author
 
     - DELETE
@@ -51,7 +51,7 @@
       - To get a list of author based on book✅
 
     - POST
-      - To add new author
+      - To add new author✅
       - To update or add new book
 
     - PUT
@@ -69,7 +69,7 @@
       - To get a list of publication based on book✅
 
     - POST
-      - To add new publication
+      - To add new publication✅
 
     - PUT
       - To update publication details
