@@ -39,8 +39,8 @@
       - To update/add new author✅
 
     - DELETE
-      - To delete a book
-      - To delete an author from a book
+      - To delete a book✅
+      - To delete an author from a book✅
 
 
     Author
@@ -58,7 +58,7 @@
       - To update author details✅
 
     - DELETE
-      - To delete an author
+      - To delete an author✅
 
 
     Publications
@@ -76,6 +76,6 @@
       - To update or add new book✅
 
     - DELETE
-      - To delete a book from publication
-      - To delete a publication
+      - To delete a book from publication✅
+      - To delete a publication✅
 */
