@@ -36,7 +36,7 @@
 
     - PUT
       - To update book details✅
-      - To update/add new author
+      - To update/add new author✅
 
     - DELETE
       - To delete a book
@@ -55,7 +55,7 @@
       - To update or add new book
 
     - PUT
-      - To update author details
+      - To update author details✅
 
     - DELETE
       - To delete an author
@@ -72,8 +72,8 @@
       - To add new publication✅
 
     - PUT
-      - To update publication details
-      - To update or add new book
+      - To update publication details✅
+      - To update or add new book✅
 
     - DELETE
       - To delete a book from publication
