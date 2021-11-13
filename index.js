@@ -34,6 +34,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Book API");
 });
 
-app.listen(4000, () => {
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
   console.log("Server Running!!!🔥");
 });
